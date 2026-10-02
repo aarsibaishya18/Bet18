@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BET18 - Login / Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .auth-container {
+            width: 100%;
+            max-width: 400px;
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            color: #38bdf8;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #334155;
+            background: #0f172a;
+            color: #fff;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #0ea5e9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <h2>BET18 Account</h2>
+        <form id="authForm">
+            <div class="form-group">
+                <label>Mobile Number / Email</label>
+                <input type="text" id="userInput" placeholder="Enter your mobile or email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="passInput" placeholder="Enter password" required>
+            </div>
+            <button type="submit">Login / Register</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('authForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // 
+            
+            const user = document.getElementById('userInput').value;
+            
+            localStorage.setItem('bet18_user', user);
+            
+            alert('Login Successful!');
+            window.location.href = 'dashboard.html'; 
+        });
+    </script>
+
+</body>
+</html>

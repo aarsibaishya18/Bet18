@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BET18 - User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1e293b;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .logo {
+            color: #38bdf8;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .wallet-card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .balance {
+            font-size: 28px;
+            color: #38bdf8;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn-deposit {
+            background: #22c55e;
+            color: #ffffff;
+        }
+        .btn-withdraw {
+            background: #ef4444;
+            color: #ffffff;
+        }
+        .section-title {
+            color: #94a3b8;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">BET18</div>
+        <div id="welcomeUser">Welcome, User!</div>
+    </div>
+
+    <div class="wallet-card">
+        <div class="section-title">Main Wallet Balance</div>
+        <div class="balance">₹0.00</div>
+        <div class="btn-group">
+            <button class="btn-deposit">Deposit</button>
+            <button class="btn-withdraw">Withdraw</button>
+        </div>
+    </div>
+
+    <div class="wallet-card">
+        <div class="section-title">Live Betting / Casino Games</div>
+        <p style="color: #94a3b8;">Games and live odds will appear here soon...</p>
+    </div>
+
+    <script>
+        const savedUser = localStorage.getItem('bet18_user');
+        if (savedUser) {
+            document.getElementById('welcomeUser').innerText = 'Welcome, ' + savedUser + '!';
+        }
+    </script>
+
+</body>
+</html>
